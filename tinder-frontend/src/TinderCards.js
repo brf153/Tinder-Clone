@@ -8,9 +8,7 @@ const TinderCards = () => {
 
 useEffect(()=>{
     const fetchData=async()=>{
-        const response = await axios.get("/tinder/cards")
-        console.log(response.data)
-        setPeople(response.data)
+        const response = await axios.get("/tinder/cards").then((e)=> setPeople(e.data)).catch((err)=>console.log(err.message)
     }
     fetchData()
 },[])
@@ -27,7 +25,7 @@ const outOfFrame=(name)=>{
   return (
     <div className='tinderCards'>
         <div className='tinderCards__cardContainer'>
-        {people.map((e)=>{
+        { people && people.map((e)=>{
            return(
 
            <TinderCard 
