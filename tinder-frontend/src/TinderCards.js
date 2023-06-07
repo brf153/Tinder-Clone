@@ -26,10 +26,7 @@ const outOfFrame=(name)=>{
   return (
     <div className='tinderCards'>
         <div className='tinderCards__cardContainer'>
-    {people && 
-    
-    
-        people.map((e)=>{
+        { people && people.map((e)=>{
            return(
 
            <TinderCard 
