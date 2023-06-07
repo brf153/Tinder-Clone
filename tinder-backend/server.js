@@ -1,7 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import tinder from "./dbCards.js"
-import cors from "cors"
+import Cors from "cors"
 import dotenv from "dotenv"
 
 dotenv.config({path: "./config.env"})
@@ -12,7 +12,7 @@ const port = 8001
 
 //MIDDLEWARES
 app.use(express.json())
-app.use(cors())
+app.use(Cors())
 
 //DB CONFIG
 mongoose.connect(process.env.DBURI).then(()=>{console.log("database connected")}).catch((e)=>console.log(e.message))
